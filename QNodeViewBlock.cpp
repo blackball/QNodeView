@@ -77,7 +77,7 @@ QNodeViewPort* QNodeViewBlock::addPort(const QString& name, bool isOutput, qint3
     port->setIndex(index);
 
     QFontMetrics fontMetrics(scene()->font());
-    const qint32 width  = fontMetrics.width(name);
+    const qint32 width  = fontMetrics.boundingRect(name).width();
     const qint32 height = fontMetrics.height();
 
     if (width > m_width - m_horizontalMargin)
